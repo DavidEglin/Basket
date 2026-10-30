@@ -30,6 +30,8 @@ targets:
       path: Supporting/Info.plist
       properties:
         CFBundleDisplayName: Basket
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         LSApplicationCategoryType: public.app-category.productivity
         NSCameraUsageDescription: Basket needs the camera for video calls in your messaging apps.
         NSMicrophoneUsageDescription: Basket needs the microphone for calls in your messaging apps.

@@ -25,6 +25,16 @@ Run `xcodegen generate` again whenever files are added or removed. The project f
 
 For "Open at login" to work reliably, copy the built app to `/Applications`. To do that, use *Product → Archive* or copy it from the build products folder.
 
+### Making a DMG
+
+```sh
+./scripts/make-dmg.sh    # creates build/Basket-<version>.dmg
+```
+
+The script builds a Release app and packages it with a drag-to-Applications layout. Bump `MARKETING_VERSION` in `project.yml` for each release.
+
+The app is ad-hoc signed, not notarized. The first time you open it on another Mac, macOS will block it. Right-click Basket → Open, or go to *System Settings → Privacy & Security → Open Anyway*. Sharing it with other people would need a Developer ID certificate and notarization.
+
 ### Tests
 
 The core logic has no AppKit or WebKit dependencies and is tested with SwiftPM:
